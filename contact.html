@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оставить заявку - АСТ Ломбард</title>
+    <!-- Подключение шрифтов Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <!-- Подключение Font Awesome для иконок -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+            
+        /* Шапка сайта */
+        header {
+            background-color: #c0392b; /* Красный цвет */
+            color: #ffffff;
+            padding: 15px 10%;
+            position: relative;
+            background-image: url('https://png.klev.club/uploads/posts/2024-05/png-klev-club-68kw-p-ornament-kazakhskii-zheltii-png-1.png');
+            background-repeat: repeat-x;
+            background-position: top center;
+            background-size: contain;
+        }
+
+        /* Полупрозрачный фон для контента в шапке */
+        .header-content {
+            background-color: rgba(192, 57, 43, 0.8); /* Полупрозрачный красный фон */
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Логотип */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 500px;
+            height: auto;
+        }
+
+        /* Навигация */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f1c40f; /* Желтый цвет при наведении */
+        }
+
+        /* Иконки соцсетей в шапке */
+        .header-social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-social-icons a {
+            color: #ffffff;
+            margin-left: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-social-icons a:hover {
+            color: #f1c40f;
+        }
+
+        /* Основной контент */
+        main {
+            padding: 60px 10%;
+            background-color: #ffffff;
+        }
+
+        main h1 {
+            font-size: 36px;
+            color: #c0392b; /* Красный заголовок */
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Форма обратной связи */
+        .contact-form {
+            background-color: #c0392b; /* Красный фон формы */
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #ffffff; /* Белый текст */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            outline: none;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #f1c40f;
+            box-shadow: 0 0 5px rgba(241, 196, 15, 0.5);
+        }
+
+        .contact-form button {
+            background-color: #f1c40f; /* Желтая кнопка */
+            color: #c0392b; /* Красный текст на кнопке */
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #f39c12;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: #c0392b; /* Красный цвет */
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 10%;
+            position: relative;
+        }
+
+        /* Нижний узор */
+        footer::after {
+            content: '';
+            display: block;
+            background-image: url('https://png.klev.club/uploads/posts/2024-05/png-klev-club-68kw-p-ornament-kazakhskii-zheltii-png-1.png');
+            background-repeat: repeat-x;
+            background-position: bottom center;
+            background-size: contain;
+            height: 80px; /* Увеличенная высота узора */
+            position: absolute;
+            bottom: 0; /* Размещаем узор прямо на подвале */
+            left: 0;
+            right: 0;
+        }
+
+        footer p {
+            margin: 5px 0;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(192, 57, 43, 0.8); /* Фон под текстом */
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            header, main, footer {
+                padding: 20px 5%;
+            }
+
+            main h1 {
+                font-size: 28px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+
+            .header-social-icons {
+                margin-top: 10px;
+            }
+
+            .header-social-icons a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <!-- Верхний узор будет добавлен через CSS -->
+        <div class="header-content">
+            <!-- Логотип -->
+            <a href="index.html" class="logo">
+                <img src="images/your-pattern.png" alt="АСТ Ломбард" class="pattern-logo" />
+            </a>
+            <nav>
+                <a href="services.html">Услуги</a>
+                <a href="documents.html">Документы</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+            <div class="header-social-icons">
+                <!-- Иконки социальных сетей -->
+                <a href="https://api.whatsapp.com/send/?phone=77770102001&text&type=phone_number&app_absent=0" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="your-instagram-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Кнопку "Оставить заявку" удалили -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <h1>Оставить заявку</h1>
+
+        <!-- Форма обратной связи -->
+        <section class="contact-form">
+            <h3>Напишите нам сообщение</h3>
+            <form id="telegramForm">
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <input type="tel" id="phone" placeholder="Ваш номер телефона" required>
+                <textarea id="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+                <button type="submit">Отправить сообщение</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <!-- Нижний узор будет добавлен через CSS -->
+        <p>Контакты: +7 (777) 010-20-01 | Email: lombard_act@mail.ru</p>
+        <p>&copy; 2024 АСТ Ломбард. Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипт отправки формы -->
+    <script>
+        document.getElementById('telegramForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            fetch('https://byfresk.net//send-message', { // Замените на ваш ngrok URL
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, message }),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert('Сообщение успешно отправлено!');
+                    } else {
+                        alert('Ошибка при отправке сообщения.');
+                    }
+                })
+                .catch((error) => {
+                    alert('Ошибка: Не удалось связаться с сервером.');
+                    console.error(error);
+                });
+
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

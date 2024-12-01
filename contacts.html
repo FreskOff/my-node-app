@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - АСТ Ломбард</title>
+    <!-- Подключение шрифтов Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .pattern-logo {
+    max-width: 500px; /* Устанавливает максимальную ширину в 500px */
+    height: auto;     /* Высота будет подстраиваться пропорционально ширине */
+}
+
+        /* Шапка сайта */
+        header {
+            background-color: #c0392b; /* Красный цвет */
+            color: #ffffff;
+            padding: 15px 10%;
+            position: relative;
+            background-image: url('https://png.klev.club/uploads/posts/2024-05/png-klev-club-68kw-p-ornament-kazakhskii-zheltii-png-1.png');
+            background-repeat: repeat-x;
+            background-position: top center;
+            background-size: contain;
+        }
+
+        /* Добавляем полупрозрачный фон для контента в хедере */
+        .header-content {
+            background-color: rgba(192, 57, 43, 0.8); /* Полупрозрачный красный фон */
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header a.logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #f1c40f; /* Желтый цвет при наведении */
+        }
+
+        /* Иконки соцсетей в шапке */
+        .header-social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-social-icons a {
+            color: #ffffff;
+            margin-left: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-social-icons a img {
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
+        }
+
+        header .cta {
+            background-color: #f1c40f; /* Желтая кнопка */
+            color: #c0392b; /* Красный текст на кнопке */
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-left: 20px;
+        }
+
+        header .cta:hover {
+            background-color: #f39c12;
+        }
+
+        /* Основной контент */
+        main {
+            padding: 60px 10%;
+            background-color: #ffffff;
+        }
+
+        main h1 {
+            font-size: 36px;
+            color: #c0392b; /* Красный заголовок */
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .branch-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .branch-list li {
+            margin: 10px 15px;
+        }
+
+        .branch-list a {
+            display: block;
+            background-color: #c0392b;
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .branch-list a:hover {
+            background-color: #f1c40f;
+            color: #c0392b;
+        }
+
+       /* Стили для информации о филиалах */
+.branch-info {
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.branch-info.active {
+    display: block;
+    opacity: 1;
+}
+
+.branch-info h2 {
+    color: #c0392b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.branch-info p {
+    margin-bottom: 10px;
+}
+
+.branch-info iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.branch-info a {
+    color: #c0392b;
+    text-decoration: none;
+}
+
+.branch-info a:hover {
+    text-decoration: underline;
+}
+
+        /* Подвал */
+        footer {
+            background-color: #c0392b; /* Красный цвет */
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 10% 60px; /* Добавлен отступ снизу для узора */
+            position: relative;
+            background-image: url('https://png.klev.club/uploads/posts/2024-05/png-klev-club-68kw-p-ornament-kazakhskii-zheltii-png-1.png');
+            background-repeat: repeat-x;
+            background-position: bottom center;
+            background-size: contain;
+        }
+
+        footer p {
+            margin: 5px 0;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(192, 57, 43, 0.8); /* Фон под текстом */
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            header {
+        background-size: auto 100px; /* Устанавливаем высоту узора 100px */
+    }
+
+    /* Увеличиваем размер узора в футере */
+    footer {
+        background-size: auto 100px; /* Устанавливаем высоту узора 100px */
+    }
+
+    /* Если необходимо, корректируем отступы */
+    header, footer {
+        padding-top: 120px; /* Отступ сверху для хедера */
+        padding-bottom: 120px; /* Отступ снизу для футера */
+    }
+            header, main, footer {
+                padding: 20px 5%;
+            }
+
+            main h1 {
+                font-size: 28px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header nav {
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-social-icons {
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-social-icons a {
+                margin: 5px;
+            }
+}
+
+    </style>
+      <script>
+        // JavaScript для переключения информации о филиалах
+        function showBranchInfo(branchNumber) {
+            var infos = document.getElementsByClassName('branch-info');
+            for (var i = 0; i < infos.length; i++) {
+                infos[i].classList.remove('active');
+            }
+            document.getElementById('branch-' + branchNumber).classList.add('active');
+            // Прокрутка к информации о филиале
+            document.getElementById('branch-' + branchNumber).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <!-- Логотип -->
+        <a href="index.html">
+            <img src="images/your-pattern.png" alt="АСТ ЛОМБАРД" class="pattern-logo" />
+        </a>
+        <!-- Навигация -->
+        <nav>
+            <a href="services.html">Услуги</a>
+            <a href="documents.html">Документы</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <!-- Блок социальных иконок -->
+        <div class="header-social-icons">
+            <!-- Иконки соцсетей -->
+            <a href="https://api.whatsapp.com/send/?phone=77770102001&text&type=phone_number&app_absent=0" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/goldroom_ast/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+
+            <!-- Кнопка "Оставить заявку" -->
+            <a href="contact.html" class="cta">Оставить заявку</a>
+        </div>
+    </div>
+</header>
+
+    
+    
+    <!-- Основной контент -->
+    <main>
+        <h1>Наши филиалы</h1>
+        <section class="branches">
+            <ul class="branch-list">
+                <li><a href="#" onclick="showBranchInfo(1)">Филиал 1</a></li>
+                <li><a href="#" onclick="showBranchInfo(2)">Филиал 2</a></li>
+                <li><a href="#" onclick="showBranchInfo(3)">Филиал 3</a></li>
+                <li><a href="#" onclick="showBranchInfo(4)">Филиал 4</a></li>
+                <li><a href="#" onclick="showBranchInfo(5)">Филиал 5</a></li>
+                <li><a href="#" onclick="showBranchInfo(6)">Филиал 6</a></li>
+            </ul>
+<!-- Информация о филиале 1 -->
+<div id="branch-1" class="branch-info">
+    <h2>Филиал 1</h2>
+    <p><strong>Адрес:</strong> ул. Пушкина 41</p>
+    <p><strong>Телефон:</strong> +7‒747‒587‒27‒00 | +7 (727) 273‒48‒60</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/goldroom_ast" target="_blank">@goldroom_ast</a></p>
+    <!-- Вставка карты -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d305.3926657221899!2d76.95229038140128!3d43.26397323871269!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e9ad7c8cebd%3A0x65a4975676f5ce58!2z0YPQuy4g0J_Rg9GI0LrQuNC90LAgNDEsINCQ0LvQvNCw0YLRiyAwNTAwMDA!5e0!3m2!1sru!2skz!4v1732974846039!5m2!1sru!2skz"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+<!-- Информация о филиале 2 -->
+<div id="branch-2" class="branch-info">
+    <h2>Филиал 2</h2>
+    <p><strong>Адрес:</strong> ул. Пушкина 41</p>
+    <p><strong>Телефон:</strong> +7‒707‒511‒01‒50 | +7 (727) 273‒42‒13</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/goldroom_ast" target="_blank">@goldroom_ast</a></p>
+    <!-- Вставка карты -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d305.3926657221899!2d76.95229038140128!3d43.26397323871269!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e9ad7c8cebd%3A0x65a4975676f5ce58!2z0YPQuy4g0J_Rg9GI0LrQuNC90LAgNDEsINCQ0LvQvNCw0YLRiyAwNTAwMDA!5e0!3m2!1sru!2skz!4v1732974846039!5m2!1sru!2skz"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+<!-- Информация о филиале 3 -->
+<div id="branch-3" class="branch-info">
+    <h2>Филиал 3</h2>
+    <p><strong>Адрес:</strong> ул. Пушкина 41</p>
+    <p><strong>Телефон:</strong> +7‒747‒378‒37‒07 | +7 (727) 273‒59‒27</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/goldroom_ast" target="_blank">@goldroom_ast</a></p>
+    <!-- Вставка карты -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d305.3926657221899!2d76.95229038140128!3d43.26397323871269!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e9ad7c8cebd%3A0x65a4975676f5ce58!2z0YPQuy4g0J_Rg9GI0LrQuNC90LAgNDEsINCQ0LvQvNCw0YLRiyAwNTAwMDA!5e0!3m2!1sru!2skz!4v1732974846039!5m2!1sru!2skz"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+<!-- Информация о филиале 4 -->
+<div id="branch-4" class="branch-info">
+    <h2>Филиал 4</h2>
+    <p><strong>Адрес:</strong> улица Толе Би 160</p>
+    <p><strong>Телефон:</strong> +7 (777) 010-20-04</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/goldroom_ast" target="_blank">@goldroom_ast</a></p>
+    <!-- Вставка карты -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2905.997557379058!2d76.903661!3d43.251473!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883694680324b1d%3A0x95698f31979237b9!2z0YPQu9C40YbQsCDQotC-0LvQtSDQkdC4IDE2MCwg0JDQu9C80LDRgtGLIDA1MDAyNiwg0JrQsNC30LDRhdGB0YLQsNC9!5e0!3m2!1sru!2sus!4v1732973983612!5m2!1sru!2sus"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+<!-- Информация о филиале 5 -->
+<div id="branch-5" class="branch-info">
+    <h2>Филиал 5</h2>
+    <p><strong>Адрес:</strong> улица Мустафина 5е</p>
+    <p><strong>Телефон:</strong> +7 (777) 010-20-05</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/act_lombard" target="_blank">@act_lombard</a></p>
+    <!-- Вставка карты -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2908.4858002222427!2d76.879135!3d43.199299!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883688edd2bcee7%3A0x431b05bbcee98a3f!2z0YPQu9C40YbQsCDQnNGD0YHRgtCw0YTQuNC90LAgNdC1LCDQkNC70LzQsNGC0YssINCa0LDQt9Cw0YXRgdGC0LDQvQ!5e0!3m2!1sru!2sus!4v1732974132855!5m2!1sru!2sus"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+<!-- Информация о филиале 6 -->
+<div id="branch-6" class="branch-info">
+    <h2>Филиал 6</h2>
+    <p><strong>Адрес:</strong> ул. Пушкина 41</p>
+    <p><strong>Телефон:</strong> +7 (705) 555 50 87</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/lombard_hranitel_almaty" target="_blank">@lombard_hranitel_almaty</a></p>
+    <!-- Вставка карты -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d305.3926657221899!2d76.95229038140128!3d43.26397323871269!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e9ad7c8cebd%3A0x65a4975676f5ce58!2z0YPQuy4g0J_Rg9GI0LrQuNC90LAgNDEsINCQ0LvQvNCw0YLRiyAwNTAwMDA!5e0!3m2!1sru!2skz!4v1732974846039!5m2!1sru!2skz"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+        </section>
+    </main>
+    <!-- Подвал -->
+    <footer>
+        <!-- Нижний узор будет добавлен через CSS псевдоэлемент -->
+        <p>Контакты: +7 (777) 010-20-01 | Email: lombard_act@mail.ru</p>
+        <p>&copy; 2024 АСТ Ломбард. Все права защищены.</p>
+    </footer>
+</body>
+</html>
